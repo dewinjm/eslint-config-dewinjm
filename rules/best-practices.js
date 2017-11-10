@@ -67,13 +67,7 @@ module.exports = {
     'no-else-return': 'off',
 
     // disallow empty functions, except for standalone funcs/arrows
-    'no-empty-function': ['error', {
-      allow: [
-        'arrowFunctions',
-        'functions',
-        'methods',
-      ]
-    }],
+    'no-empty-function': 'error',
 
     // disallow empty destructuring patterns
     'no-empty-pattern': 'error',
