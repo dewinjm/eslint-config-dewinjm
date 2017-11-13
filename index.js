@@ -4,6 +4,7 @@ module.exports = {
   extends: [
     './rules/best-practices',
     './rules/possible-errors',
+    './rules/stylistic',
     './rules/variables',
   ].map(require.resolve),
   env: {
