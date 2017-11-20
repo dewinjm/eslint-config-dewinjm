@@ -24,16 +24,16 @@ repoFiles.forEach((file, index) => {
 // validate no-empty-function rule
 const bestPracticeReport = cliEngine.executeOnText('function foo() {} foo()');
 assert.equal(bestPracticeReport.warningCount, 0);
-assert.equal(bestPracticeReport.errorCount, 1); // should fail when has a error
+assert.equal(bestPracticeReport.errorCount, 3); // should fail when has
 
 // possible-error rules Unit Test
 // validate use of console: rules: { 'no-console': 'warn' }
-const possibleErrorReport = cliEngine.executeOnText('console.log(the);');
+const possibleErrorReport = cliEngine.executeOnText('var foo; console.log(foo);\n');
 assert.equal(possibleErrorReport.warningCount, 1); // should fail when has a warn
-assert.equal(repoReport.errorCount, 0);
+assert.equal(possibleErrorReport.errorCount, 0);
 
 // variable rules Unit Test
 // validate no-unused-vars rule
-const variableReport = cliEngine.executeOnText('var foo = 1;');
+const variableReport = cliEngine.executeOnText('var foo = 1;\n');
 assert.equal(variableReport.warningCount, 0);
 assert.equal(variableReport.errorCount, 1); // should fail when has a error
