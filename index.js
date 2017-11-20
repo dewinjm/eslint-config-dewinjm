@@ -1,23 +1,20 @@
 'use strict';
 
 module.exports = {
-  extends: [
-    './rules/best-practices',
-    './rules/possible-errors',
-    './rules/variables',
-  ].map(require.resolve),
-  env: {
-    browser: true,
-    node: true,
-    amd: false,
-    mocha: false,
-    jasmine: false
-  },
-  parserOptions: {
-    ecmaVersion: 2017,
-    sourceType: 'module',
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true,
-    },
-  }
+	extends: [
+		'./rules/best-practices',
+		'./rules/es6',
+		'./rules/imports',
+		'./rules/node',
+		'./rules/possible-errors',
+		'./rules/stylistic',
+		'./rules/strict',
+		'./rules/variables',
+	].map(require.resolve),
+	env: {
+		browser: true,
+		amd: false,
+		mocha: false,
+		jasmine: false,
+	},
 };
