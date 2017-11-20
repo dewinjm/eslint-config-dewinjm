@@ -3,8 +3,8 @@
 const assert = require('assert');
 const eslint = require('eslint');
 const conf = require('../');
-const cliEngine = new eslint.CLIEngine(conf);
 
+const cliEngine = new eslint.CLIEngine(conf);
 // The source files to lint.
 const repoFiles = [
 	'index.js',
@@ -30,10 +30,10 @@ assert.equal(bestPracticeReport.errorCount, 3); // should fail when has
 // validate use of console: rules: { 'no-console': 'warn' }
 const possibleErrorReport = cliEngine.executeOnText('var foo; console.log(foo);\n');
 assert.equal(possibleErrorReport.warningCount, 1); // should fail when has a warn
-assert.equal(possibleErrorReport.errorCount, 0);
+assert.equal(possibleErrorReport.errorCount, 1);
 
 // variable rules Unit Test
 // validate no-unused-vars rule
 const variableReport = cliEngine.executeOnText('var foo = 1;\n');
 assert.equal(variableReport.warningCount, 0);
-assert.equal(variableReport.errorCount, 1); // should fail when has a error
+assert.equal(variableReport.errorCount, 2); // should fail when has a error

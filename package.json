@@ -11,14 +11,16 @@
   },
   "description": "ESLint shareable config for the JavaScript style guide Edit",
   "devDependencies": {
-    "eslint": "^4.10.0"
+    "eslint": "^4.10.0",
+    "eslint-plugin-import": "2.8.0"
   },
   "homepage": "https://github.com/dewinjm/eslint-config-dewinjm",
   "license": "MIT",
   "main": "index.js",
   "name": "eslint-config-dewinjm",
   "peerDependencies": {
-    "eslint": "^4.10.0"
+    "eslint": "^4.10.0",
+    "eslint-plugin-import": "2.8.0"
   },
   "repository": {
     "type": "git",
